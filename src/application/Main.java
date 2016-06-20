@@ -24,10 +24,7 @@ public class Main extends Application {
 			BorderPane root = new BorderPane();
 			Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
 	        //set Stage boundaries to visible bounds of the main screen
-			primaryStage.setX(primaryScreenBounds.getMinX());
-			primaryStage.setY(primaryScreenBounds.getMinY());
-			primaryStage.setWidth(primaryScreenBounds.getWidth()*0.2);
-			primaryStage.setHeight(primaryScreenBounds.getHeight());
+			
 			System.out.println(primaryScreenBounds.getWidth()*0.2);
 			System.out.println(primaryScreenBounds.getHeight());
 			
@@ -44,7 +41,7 @@ public class Main extends Application {
 	public void showLoginMenu(){
 		try{
 			FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(Main.class.getResource("../view/Vw_Login.fxml"));
+	        loader.setLocation(Main.class.getResource("../views/Vw_Login.fxml"));
 	        AnchorPane login = (AnchorPane) loader.load();
 	        rootLayout.setCenter(login);	
 		}catch(Exception e){
