@@ -20,20 +20,14 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
+
 			this.primaryStage  = primaryStage;
-//			BorderPane root = new BorderPane();
-//			Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
-//	        //set Stage boundaries to visible bounds of the main screen
-//			primaryStage.setX(primaryScreenBounds.getMinX());
-//			primaryStage.setY(primaryScreenBounds.getMinY());
-//			primaryStage.setWidth(primaryScreenBounds.getWidth()*0.2);
-//			primaryStage.setHeight(primaryScreenBounds.getHeight());
-//			System.out.println(primaryScreenBounds.getWidth()*0.2);
-//			System.out.println(primaryScreenBounds.getHeight());
 			
 			Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
-			primaryStage.setX(primScreenBounds.getWidth()*0.001); 
-			primaryStage.setY(primScreenBounds.getHeight()*0.001);
+			primaryStage.setX(primScreenBounds.getWidth()*0.003); 
+			primaryStage.setY(primScreenBounds.getHeight()*0.005);
+			primaryStage.setWidth(primScreenBounds.getWidth()*0.2);
+			primaryStage.setHeight(primScreenBounds.getHeight()*0.99);
 			
 			initRootLayout();
 
