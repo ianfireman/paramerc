@@ -20,18 +20,18 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
+
 			this.primaryStage  = primaryStage;
-			BorderPane root = new BorderPane();
-			Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
+
+			Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+			primaryStage.setX(primScreenBounds.getWidth()*0.003); 
+			primaryStage.setY(primScreenBounds.getHeight()*0.005);
+			primaryStage.setWidth(primScreenBounds.getWidth()*0.2);
+			primaryStage.setHeight(primScreenBounds.getHeight()*0.99);]
+			
 	        //set Stage boundaries to visible bounds of the main screen
-			
-			System.out.println(primaryScreenBounds.getWidth()*0.2);
-			System.out.println(primaryScreenBounds.getHeight());
-			
 			initRootLayout();
-
 			showLoginMenu();
-
 			
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -53,8 +53,10 @@ public class Main extends Application {
 	public void initRootLayout(){
 		try{
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("../views/RootLayout.fxml"));
+			loader.setLocation(Main.class.getResource("../view/RootLayout.fxml"));
+			
 			rootLayout = (BorderPane) loader.load();
+			primaryStage.setResizable(false);
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
             primaryStage.show();

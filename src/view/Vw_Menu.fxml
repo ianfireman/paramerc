@@ -27,7 +27,8 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Button contentDisplay="TOP" layoutX="101.0" layoutY="55.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="70.0" text="LogOut" AnchorPane.bottomAnchor="54.0" AnchorPane.leftAnchor="101.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="55.0" />
+                  <Button contentDisplay="TOP" layoutX="187.0" layoutY="95.0" minHeight="25.0" minWidth="56.0" mnemonicParsing="false" text="LogOut" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+                  <Button layoutX="136.0" layoutY="110.0" mnemonicParsing="false" text="Opções" />
                </children>
             </AnchorPane>
         </items>
