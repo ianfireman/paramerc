@@ -2,49 +2,87 @@ package models;
 
 import java.util.ArrayList;
 
-import exceptions.userAlreadyExists;
+import exceptions.UserCreation_Exception;
 
 public class User {
 	
-	private String username;
-	private String password;
-	private int access;
+	// Atributos //
 	
-	private static ArrayList<String> errors = new ArrayList<String> ();
-	
-	public User(String username, String password, int access) throws userAlreadyExists{
-		boolean userExists;
-		this.username = username;
-		this.password = password;
-		this.access = access;
-		this.checkParams();
-		userExists = this.checkUser();
-		newUser(userExists, this);
-	}
-
-	private void checkParams() {
-		String usernameErro = "Seu username deve conter no minimo 4 digitos";
-		String passwordErro = "Seu password deve conter no minimo 4 digitos";
+		private String username;
+		private String password;
+		private int access;
 		
-		if(username.length() < 4){
-			errors.add(usernameErro);
+		// END Atributos //
+		
+		private static ArrayList<String> errors = new ArrayList<String> ();
+		
+		public User(String username, String password, int access) throws UserCreation_Exception {
+			this.username = username;
+			this.password = password;
+			this.access = access;
+			this.checkParams();
+			this.checkUser();
+			this.saveUser();
 		}
-		if(password.length() < 4){
-			errors.add(passwordErro);
-		}
-	}
+		
+		// Gets Setters //
 
-	private boolean checkUser() {
-		//CHECK DATABASE
-		return false;
-	}
-	
-	private void newUser(boolean userExists, User user) throws userAlreadyExists {
-		if(userExists){
-			throw new userAlreadyExists();
-		} else {
+		public String getUsername() {
+			return username;
+		}
+
+		public void setUsername(String username) {
+			this.username = username;
+		}
+
+		public String getPassword() {
+			return password;
+		}
+
+		public void setPassword(String password) {
+			this.password = password;
+		}
+
+		public int getAccess() {
+			return access;
+		}
+
+		public void setAccess(int access) {
+			this.access = access;
+		}
+		
+		// END Gets Setters //
+		
+		// private Functions //
+		
+		private void checkUser() throws UserCreation_Exception {
+			String userDuplicateError = "Esse nome de usuario ja esta em uso.";
+			//CHECK DATABASE
+			if(false){
+				errors.add(userDuplicateError);
+				throw new UserCreation_Exception(errors);
+			}
+		}
+		
+		private void checkParams() throws UserCreation_Exception {
+			String usernameErro = "Seu username deve conter no minimo 3 digitos.";
+			String passwordErro = "Seu password deve conter no minimo 4 digitos.";
+			
+			if(username.length() < 3){
+				errors.add(usernameErro);
+			}
+			if(password.length() < 4){
+				errors.add(passwordErro);
+			}
+			if(!errors.isEmpty()){
+				throw new UserCreation_Exception(errors);
+			}
+		}
+		
+		private void saveUser() throws UserCreation_Exception {
+			System.out.println("Usuario Criado");
 			//SALVA NO BANCO
 		}
+		
+		// END private Functions //
 	}
-
-}
