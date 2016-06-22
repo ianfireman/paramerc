@@ -2,7 +2,7 @@ package models;
 
 import java.util.ArrayList;
 
-import exceptions.UserCreation_Exception;
+import exceptions.Creation_Exception;
 
 public class User {
 	
@@ -16,7 +16,7 @@ public class User {
 		
 		private static ArrayList<String> errors = new ArrayList<String> ();
 		
-		public User(String username, String password, int access) throws UserCreation_Exception {
+		public User(String username, String password, int access) throws Creation_Exception {
 			this.username = username;
 			this.password = password;
 			this.access = access;
@@ -55,16 +55,16 @@ public class User {
 		
 		// private Functions //
 		
-		private void checkUser() throws UserCreation_Exception {
+		private void checkUser() throws Creation_Exception {
 			String userDuplicateError = "Esse nome de usuario ja esta em uso.";
 			//CHECK DATABASE
 			if(false){
 				errors.add(userDuplicateError);
-				throw new UserCreation_Exception(errors);
+				throw new Creation_Exception(errors);
 			}
 		}
 		
-		private void checkParams() throws UserCreation_Exception {
+		private void checkParams() throws Creation_Exception {
 			String usernameErro = "Seu username deve conter no minimo 3 digitos.";
 			String passwordErro = "Seu password deve conter no minimo 4 digitos.";
 			
@@ -75,11 +75,11 @@ public class User {
 				errors.add(passwordErro);
 			}
 			if(!errors.isEmpty()){
-				throw new UserCreation_Exception(errors);
+				throw new Creation_Exception(errors);
 			}
 		}
 		
-		private void saveUser() throws UserCreation_Exception {
+		private void saveUser() throws Creation_Exception {
 			System.out.println("Usuario Criado");
 			//SALVA NO BANCO
 		}
