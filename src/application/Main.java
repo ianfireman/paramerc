@@ -27,7 +27,7 @@ public class Main extends Application {
 			primaryStage.setX(primScreenBounds.getWidth()*0.003); 
 			primaryStage.setY(primScreenBounds.getHeight()*0.005);
 			primaryStage.setWidth(primScreenBounds.getWidth()*0.2);
-			primaryStage.setHeight(primScreenBounds.getHeight()*0.99);]
+			primaryStage.setHeight(primScreenBounds.getHeight()*0.99);
 			
 	        //set Stage boundaries to visible bounds of the main screen
 			initRootLayout();
