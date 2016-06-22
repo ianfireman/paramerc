@@ -11,7 +11,7 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="467.0">
                <children>
                   <Button layoutX="369.0" layoutY="27.0" mnemonicParsing="false" prefWidth="70.0" text="Aceitar" />
-                  <Button layoutX="287.0" layoutY="27.0" mnemonicParsing="false" prefWidth="70.0" text="Cancelar" />
+                  <Button fx:id="Btn_DefaultCancelar" layoutX="287.0" layoutY="27.0" mnemonicParsing="false" prefWidth="70.0" text="Cancelar" />
                </children>
             </AnchorPane>
          </children>

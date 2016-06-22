@@ -5,10 +5,12 @@ import javafx.geometry.Rectangle2D;
 import java.io.IOException;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
@@ -17,6 +19,7 @@ public class Main extends Application {
 	
 	private BorderPane rootLayout;
 	private Stage primaryStage;
+	private Stage secondaryStage;
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -55,7 +58,6 @@ public class Main extends Application {
 		try{
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Main.class.getResource("../view/RootLayout.fxml"));
-			
 			rootLayout = (BorderPane) loader.load();
 			primaryStage.setResizable(false);
 			Scene scene = new Scene(rootLayout);
