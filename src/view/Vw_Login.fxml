@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="728.0" prefWidth="273.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<AnchorPane prefHeight="728.0" prefWidth="273.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
    <children>
       <SplitPane dividerPositions="0.7961432506887053" layoutX="57.0" layoutY="50.0" orientation="VERTICAL" prefHeight="728.0" prefWidth="273.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>

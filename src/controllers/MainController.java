@@ -1,9 +1,10 @@
-package application;
+package controllers;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import application.Main;
 import exceptions.Creation_Exception;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
