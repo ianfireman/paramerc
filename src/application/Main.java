@@ -4,6 +4,7 @@ import javafx.geometry.Rectangle2D;
 
 import java.io.IOException;
 
+import controllers.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Screen;
