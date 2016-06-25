@@ -11,11 +11,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import models.Session;
 
 public class MainController implements Initializable {
@@ -31,23 +34,24 @@ public class MainController implements Initializable {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
 	}
 	
 	public void loginUser(ActionEvent e){
 		try {
 			currentUser = new Session(loginField.getText(), passwordField.getText());
-			FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(Main.class.getResource("../view/Vw_Menu.fxml"));
-	        AnchorPane menu = (AnchorPane) loader.load();
-	        Main.rootLayout.setCenter(menu);			
-		} catch (Creation_Exception e1) {
-			// TODO Auto-generated catch block
-			loginAlert.setText(e1.getErrors().toString());
+			startMenu(e);
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			System.out.println("erro IOEx");
+			e1.printStackTrace();
+		} catch (Creation_Exception e2) {
+			loginAlert.setText(e2.getErrors().toString());
 		}
+	}
+
+	private void startMenu(ActionEvent e) throws IOException {
+		FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("../view/Vw_Menu.fxml"));
+        AnchorPane menu = (AnchorPane) loader.load();
+        Main.rootLayout.setCenter(menu);
 	}
 	
 	public void closeApplication(ActionEvent e){
