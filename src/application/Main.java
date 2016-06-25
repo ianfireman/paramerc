@@ -38,7 +38,7 @@ public class Main extends Application {
 		}
 	}
 	
-	public void showLoginMenu(){
+	public static void showLoginMenu(){
 		try{
 			FXMLLoader loader = new FXMLLoader();
 	        loader.setLocation(Main.class.getResource("../view/Vw_Login.fxml"));

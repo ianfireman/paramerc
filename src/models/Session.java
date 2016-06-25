@@ -13,6 +13,7 @@ public class Session {
 
 	public Session(String username, String password) throws Creation_Exception{
 		this.username = username;
+		this.checkIfValid(password);
 		this.checkCredentials(password);
 		this.authenticate();
 	}
@@ -23,6 +24,15 @@ public class Session {
 	
 	public int getId() {
 		return id;
+	}
+	
+
+	private void checkIfValid(String password) throws Creation_Exception {
+		String checkIfValidError = "Usuario e senhas devem ter no minimo 3 digitos.";
+		if(this.username.length() < 3 || password.length() < 3){
+			errors.add(checkIfValidError);
+			throw new Creation_Exception(errors);
+		}
 	}
 
 	private void checkCredentials(String password) throws Creation_Exception {

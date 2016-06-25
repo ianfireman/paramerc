@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import application.Main;
 import exceptions.Creation_Exception;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import models.Session;
 
@@ -47,5 +49,8 @@ public class MainController implements Initializable {
 			System.out.println("erro IOEx");
 		}
 	}
-
+	
+	public void closeApplication(ActionEvent e){
+		Platform.exit();
+	}
 }

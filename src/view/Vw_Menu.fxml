@@ -27,7 +27,7 @@
             </AnchorPane>
           <AnchorPane maxHeight="50.0" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="271.0">
                <children>
-                  <Button contentDisplay="TOP" layoutX="191.0" layoutY="13.0" minHeight="25.0" minWidth="56.0" mnemonicParsing="false" text="LogOut" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="13.0" />
+                  <Button contentDisplay="TOP" layoutX="191.0" layoutY="13.0" minHeight="25.0" minWidth="56.0" mnemonicParsing="false" onAction="#logoutUser" text="LogOut" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="13.0" />
                   <Button layoutX="126.0" layoutY="13.0" mnemonicParsing="false" text="Opções" AnchorPane.rightAnchor="88.0" AnchorPane.topAnchor="13.0" />
                </children>
             </AnchorPane>
