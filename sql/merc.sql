@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.24)
 # Database: merc
-# Generation Time: 2016-06-28 20:24:27 +0000
+# Generation Time: 2016-06-28 20:30:04 +0000
 # ************************************************************
 
 
@@ -98,6 +98,8 @@ CREATE TABLE `vendedor` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `nome` varchar(50) DEFAULT NULL,
+  `login` varchar(50) DEFAULT NULL,
+  `senha` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
