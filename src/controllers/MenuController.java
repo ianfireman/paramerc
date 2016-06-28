@@ -9,10 +9,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class MenuController implements Initializable {
@@ -23,25 +26,34 @@ public class MenuController implements Initializable {
 	
 	@FXML
 	private Label usernameMenu;
+	@FXML
+	private Button btn_caixa;
+	@FXML
+	private Button btn_financeiro;
+	@FXML
+	private Button btn_estoque;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		try {
+//		try {
 			stage = new Stage();
-			usernameMenu.setText(MainController.currentUser.getUsername());
-			startCaixa();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+			configStage();
+//			//usernameMenu.setText(MainController.currentUser.getUsername());
+//			startCaixa();
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 	}	
 	
 	public void startCaixa() throws IOException {
 		if(!checkModule("Caixa")){ // se o modulo nao for Caixa entao ele abre o Caixa
 			stage.hide();
-			parent = FXMLLoader.load(getClass().getResource("../view/Vw_caixa.fxml"));
+			parent = FXMLLoader.load(getClass().getResource("../view/AP_CaixaCompra.fxml"));
 			scene = new Scene(parent);
 			stage.setScene(scene);
 			stage.setTitle("Caixa");
+			stage.setResizable(false);
+			stage.setResizable(false);
 			stage.show();
 		}
 	}
@@ -49,7 +61,7 @@ public class MenuController implements Initializable {
 	public void startEstoque() throws IOException{
 		if(!checkModule("Estoque")){ // se o modulo nao for estoque entao ele abre o estoque
 			stage.hide();
-			parent = FXMLLoader.load(getClass().getResource("../view/Vw_caixa.fxml"));
+			parent = FXMLLoader.load(getClass().getResource("../view/AP_CaixaCompra.fxml"));
 			scene = new Scene(parent);
 			stage.setScene(scene);
 			stage.setTitle("Estoque");
@@ -60,10 +72,11 @@ public class MenuController implements Initializable {
 	public void startFinanceiro() throws IOException{
 		if(!checkModule("Financeiro")){ // se o modulo nao for Financeiro entao ele abre o Financeiro
 			stage.hide();
-			parent = FXMLLoader.load(getClass().getResource("../view/Vw_caixa.fxml"));
+			parent = FXMLLoader.load(getClass().getResource("../view/AP_CaixaCompra.fxml"));
 			scene = new Scene(parent);
 			stage.setScene(scene);
 			stage.setTitle("Financeiro");
+			stage.setResizable(false);
 			stage.show();	
 		}
 	}
@@ -75,6 +88,14 @@ public class MenuController implements Initializable {
 			return true;
 		}
 		return false;
+	}
+	
+	private void configStage(){
+		Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+		stage.setX(primScreenBounds.getWidth()*0.21); 
+		stage.setY(primScreenBounds.getHeight()*0.005);
+		stage.setWidth(primScreenBounds.getWidth()*0.79);
+		stage.setHeight(primScreenBounds.getHeight()*0.99);
 	}
 	
 	public void logoutUser(ActionEvent e){
