@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.24)
 # Database: merc
-# Generation Time: 2016-06-28 20:36:02 +0000
+# Generation Time: 2016-06-28 21:28:33 +0000
 # ************************************************************
 
 
@@ -24,9 +24,9 @@
 # ------------------------------------------------------------
 
 CREATE TABLE `cliente` (
-  `id` int(11) NOT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `nome` varchar(50) DEFAULT NULL,
   `cpf` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -39,12 +39,12 @@ CREATE TABLE `cliente` (
 
 CREATE TABLE `item` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `produto_id` int(11) NOT NULL,
+  `pedido_id` int(11) NOT NULL,
   `quantidade` int(11) DEFAULT NULL,
   `valor` float DEFAULT NULL,
-  `pedido_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_item_produto_idx` (`produto_id`),
   KEY `fk_item_pedido1_idx` (`pedido_id`),
@@ -58,9 +58,9 @@ CREATE TABLE `item` (
 # ------------------------------------------------------------
 
 CREATE TABLE `pedido` (
-  `id` int(11) NOT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `cliente_id` int(11) NOT NULL,
   `vendedor_id` int(11) NOT NULL,
   `valor` float DEFAULT NULL,
@@ -79,9 +79,9 @@ CREATE TABLE `pedido` (
 # ------------------------------------------------------------
 
 CREATE TABLE `produto` (
-  `id` int(11) NOT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `nome` varchar(50) DEFAULT NULL,
   `quantidade` int(11) DEFAULT NULL,
   `valor` float DEFAULT NULL,
@@ -95,8 +95,8 @@ CREATE TABLE `produto` (
 
 CREATE TABLE `vendedor` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `nome` varchar(50) DEFAULT NULL,
   `login` varchar(50) DEFAULT NULL,
   `senha` varchar(50) DEFAULT NULL,
