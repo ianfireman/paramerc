@@ -35,24 +35,22 @@ public class MenuController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-//		try {
+		try {
 			stage = new Stage();
 			configStage();
-//			//usernameMenu.setText(MainController.currentUser.getUsername());
-//			startCaixa();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
+			usernameMenu.setText(MainController.currentUser.getUsername());
+			startCaixa();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}	
 	
 	public void startCaixa() throws IOException {
 		if(!checkModule("Caixa")){ // se o modulo nao for Caixa entao ele abre o Caixa
-			stage.hide();
 			parent = FXMLLoader.load(getClass().getResource("../view/AP_CaixaCompra.fxml"));
 			scene = new Scene(parent);
 			stage.setScene(scene);
 			stage.setTitle("Caixa");
-			stage.setResizable(false);
 			stage.setResizable(false);
 			stage.show();
 		}
@@ -60,7 +58,6 @@ public class MenuController implements Initializable {
 
 	public void startEstoque() throws IOException{
 		if(!checkModule("Estoque")){ // se o modulo nao for estoque entao ele abre o estoque
-			stage.hide();
 			parent = FXMLLoader.load(getClass().getResource("../view/AP_CaixaCompra.fxml"));
 			scene = new Scene(parent);
 			stage.setScene(scene);
@@ -71,7 +68,6 @@ public class MenuController implements Initializable {
 	
 	public void startFinanceiro() throws IOException{
 		if(!checkModule("Financeiro")){ // se o modulo nao for Financeiro entao ele abre o Financeiro
-			stage.hide();
 			parent = FXMLLoader.load(getClass().getResource("../view/AP_CaixaCompra.fxml"));
 			scene = new Scene(parent);
 			stage.setScene(scene);

@@ -36,8 +36,9 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="71.0" prefWidth="227.0">
                <children>
-                  <Button fx:id="btn_logout" layoutX="201.0" layoutY="23.0" mnemonicParsing="false" text="LogOut" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button fx:id="btn_logout" layoutX="201.0" layoutY="23.0" mnemonicParsing="false" onAction="#logoutUser" text="LogOut" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                   <Button fx:id="btn_sair" layoutX="14.0" layoutY="23.0" mnemonicParsing="false" text="Sair" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Label fx:id="usernameMenu" layoutX="136.0" layoutY="27.0" />
                </children>
             </AnchorPane>
         </items>
