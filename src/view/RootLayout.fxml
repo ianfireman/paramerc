@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.AnchorPane?>
 
 
-<BorderPane prefHeight="728.0" prefWidth="273.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
-   <cursor>
-      <Cursor fx:constant="DEFAULT" />
-   </cursor>
-</BorderPane>
+<AnchorPane prefHeight="728.0" prefWidth="273.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.60">
+	<!-- TODO Add Nodes -->
+</AnchorPane>

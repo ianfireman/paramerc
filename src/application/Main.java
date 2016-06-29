@@ -16,7 +16,7 @@ import javafx.scene.layout.BorderPane;
 
 public class Main extends Application {
 	
-	public static BorderPane rootLayout;
+	public static AnchorPane rootLayout;
 	private Stage primaryStage;
 	@Override
 	public void start(Stage primaryStage) {
@@ -44,7 +44,12 @@ public class Main extends Application {
 			FXMLLoader loader = new FXMLLoader();
 	        loader.setLocation(Main.class.getResource("../view/Vw_Login.fxml"));
 	        AnchorPane login = (AnchorPane) loader.load();
-	        rootLayout.setCenter(login);	
+	        //rootLayout.setCenter(login);
+	        rootLayout.getChildren().add(login);
+	        AnchorPane.setTopAnchor(login, 0.0);
+	        AnchorPane.setBottomAnchor(login, 0.0);
+	        AnchorPane.setRightAnchor(login, 0.0);
+	        AnchorPane.setLeftAnchor(login, 0.0);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -56,7 +61,7 @@ public class Main extends Application {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Main.class.getResource("../view/RootLayout.fxml"));
 			
-			rootLayout = (BorderPane) loader.load();
+			rootLayout = (AnchorPane) loader.load();
 			primaryStage.setResizable(false);
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);

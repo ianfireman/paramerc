@@ -49,9 +49,14 @@ public class MainController implements Initializable {
 
 	private void startMenu(ActionEvent e) throws IOException {
 		FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Main.class.getResource("../view/Vw_Menu.fxml"));
+        loader.setLocation(Main.class.getResource("../view/AP_Menu_Modulos.fxml"));
         AnchorPane menu = (AnchorPane) loader.load();
-        Main.rootLayout.setCenter(menu);
+        //Main.rootLayout.setCenter(menu);
+        Main.rootLayout.getChildren().add(menu);
+        Main.rootLayout.setTopAnchor(menu, 0.0);
+        Main.rootLayout.setBottomAnchor(menu, 0.0);
+        Main.rootLayout.setRightAnchor(menu, 0.0);
+        Main.rootLayout.setLeftAnchor(menu, 0.0);
 	}
 	
 	public void closeApplication(ActionEvent e){
