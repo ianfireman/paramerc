@@ -19,7 +19,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import models.Compra_model;
 import models.Session;
+import models.User;
 
 public class MainController implements Initializable {
 	
@@ -38,7 +40,9 @@ public class MainController implements Initializable {
 	
 	public void loginUser(ActionEvent e){
 		try {
-			currentUser = new Session(loginField.getText(), passwordField.getText());
+			User user = new User(loginField.getText(), passwordField.getText(), 1);
+			Compra_model compra = new Compra_model();
+			currentUser = new Session(user, compra);
 			startMenu(e);
 		} catch (IOException e1) {
 			e1.printStackTrace();
