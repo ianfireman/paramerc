@@ -5,7 +5,7 @@ import java.io.IOException;
 import controllers.MainController;
 import exceptions.Creation_Exception;
 
-public aspect exceptions {
+public aspect Login_Exceptions {
 	
 	declare soft: Creation_Exception: ( execution(* loginUser(*)));
 	declare soft: IOException: ( execution(* loginUser(*)));

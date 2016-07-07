@@ -35,14 +35,10 @@ public class MenuController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		try {
-			stage = new Stage();
-			configStage();
-			usernameMenu.setText(MainController.currentUser.getUser().getUsername());
-			startCaixa();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		stage = new Stage();
+		configStage();
+		usernameMenu.setText(MainController.currentUser.getUser().getUsername());
+		startCaixa();
 	}	
 	
 	public void startCaixa() throws IOException {
