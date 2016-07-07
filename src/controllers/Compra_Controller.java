@@ -11,14 +11,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import models.Compra_model;
-import models.Item_model;
+import models.Compra;
+import models.Item;
 
 
 public class Compra_Controller implements Initializable{
 
-	private Compra_model compra;
-	private Item_model item;
+	private Compra compra;
+	private Item item;
 	
 	@FXML
 	private Label lb_valorTotal;
@@ -42,20 +42,20 @@ public class Compra_Controller implements Initializable{
 		this.dp_dataHoje.setValue(LocalDate.now());
 	}
 	
-	private Item_model mockItem(){
-		Item_model item = new Item_model("Nestle","23/08/2016",12,"Nescal","23/01/2016","Alimentos",10.00);
+	private Item mockItem(){
+		Item item = new Item("Nestle","23/08/2016",12,"Nescal","23/01/2016","Alimentos",10.00);
 		return item;
 	}
 	
 	private void mockCompra(){
-		compra = new Compra_model();
+		compra = new Compra();
 		compra.setData_compra("06/07/2016");
 		compra.setNome_user("Abhner");
 	}
 	
 	public void AdicionarItem(ActionEvent e){
 		//Item item = ConectaBanco.procuraItem(tf_codigoBarras);
-		Item_model item = mockItem();
+		Item item = mockItem();
 		mockCompra();
 		MainController.currentUser.getCompra().addItem(item);
 		MainController.currentUser.getCompra().setPreco_compra(item.getPreco_unitario());

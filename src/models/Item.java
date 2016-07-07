@@ -1,6 +1,6 @@
 package models;
 
-public class Item_model {
+public class Item {
 
 	private String fabricante;
 	private String validade;
@@ -10,7 +10,7 @@ public class Item_model {
 	private int codigo;
 	private double preco_unitario;
 	
-	public Item_model(String fabricante, String validade, int codigo, 
+	public Item(String fabricante, String validade, int codigo, 
 			String descricao, String data_entrada, String grupo, double preco_unitario){
 		
 		this.codigo = codigo;

@@ -19,7 +19,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import models.Compra_model;
+import models.Compra;
 import models.Session;
 import models.User;
 
@@ -43,7 +43,7 @@ public class MainController implements Initializable {
 	public void loginUser(ActionEvent e){
 		try {
 			User user = new User(loginField.getText(), passwordField.getText(), 1);
-			Compra_model compra = new Compra_model();
+			Compra compra = new Compra();
 			currentUser = new Session(user, compra);
 			startMenu(e);
 		} catch (IOException e1) {

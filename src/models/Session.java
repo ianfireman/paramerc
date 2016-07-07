@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 import exceptions.Creation_Exception;
 import models.User;
-import models.Compra_model;
+import models.Compra;
 
 public class Session {
 	
 	private User user;
-	private Compra_model compra;
+	private Compra compra;
 
 	private static ArrayList<String> errors = new ArrayList<String> ();
 
-	public Session(User user, Compra_model compra) throws Creation_Exception{
+	public Session(User user, Compra compra) throws Creation_Exception{
 		this.user = user;
 		this.checkIfValid();
 		this.checkCredentials(user.getPassword());
@@ -25,7 +25,7 @@ public class Session {
 		return user;
 	}
 	
-	public Compra_model getCompra() {
+	public Compra getCompra() {
 		return compra;
 	}
 

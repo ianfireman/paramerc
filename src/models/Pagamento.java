@@ -1,11 +1,11 @@
 package models;
 
-public class Pagamento_model {
+public class Pagamento {
 	
 	private int tipo_pagamento;
 	private String data_pagamento;
 	private String currentUser;
-	private Compra_model compra;
+	private Compra compra;
 	private double pago_total;
 	private double troco_total;
 	
@@ -28,10 +28,10 @@ public class Pagamento_model {
 	public void setCurrentUser(String currentUser) {
 		this.currentUser = currentUser;
 	}
-	public Compra_model getCompra() {
+	public Compra getCompra() {
 		return compra;
 	}
-	public void setCompra(Compra_model compra) {
+	public void setCompra(Compra compra) {
 		this.compra = compra;
 	}
 	public double getPago_total() {

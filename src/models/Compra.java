@@ -2,28 +2,28 @@ package models;
 
 import java.util.ArrayList;
 
-public class Compra_model {
+public class Compra {
 	
-	private ArrayList<Item_model> itens;
+	private ArrayList<Item> itens;
 	private double preco_compra = 0;
 	private String data_compra;
 	private String nome_user;
 	
 	
-	public Compra_model(){
-		itens = new ArrayList<Item_model>();
+	public Compra(){
+		itens = new ArrayList<Item>();
 	}
 	
-	public void addItem(Item_model novoItem){
+	public void addItem(Item novoItem){
 		itens.add(novoItem);
 	}
 	public int getTotalItens(){
 		return itens.size();
 	}
-	public ArrayList<Item_model> getItens() {
+	public ArrayList<Item> getItens() {
 		return itens;
 	}
-	public void setItens(ArrayList<Item_model> itens) {
+	public void setItens(ArrayList<Item> itens) {
 		this.itens = itens;
 	}
 	public double getPreco_compra() {
