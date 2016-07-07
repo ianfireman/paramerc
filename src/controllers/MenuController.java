@@ -38,7 +38,7 @@ public class MenuController implements Initializable {
 		try {
 			stage = new Stage();
 			configStage();
-			usernameMenu.setText(MainController.currentUser.getUsername());
+			usernameMenu.setText(MainController.currentUser.getUser().getUsername());
 			startCaixa();
 		} catch (IOException e) {
 			e.printStackTrace();

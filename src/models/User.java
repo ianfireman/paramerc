@@ -67,6 +67,8 @@ public class User {
 		private void checkParams() throws Creation_Exception {
 			String usernameErro = "Seu username deve conter no minimo 3 digitos.";
 			String passwordErro = "Seu password deve conter no minimo 4 digitos.";
+			System.out.println(username + " a " + password);
+			System.out.println("asdadas");
 			
 			if(username.length() < 3){
 				errors.add(usernameErro);

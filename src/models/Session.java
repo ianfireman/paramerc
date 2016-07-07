@@ -3,33 +3,35 @@ package models;
 import java.util.ArrayList;
 
 import exceptions.Creation_Exception;
+import models.User;
+import models.Compra_model;
 
 public class Session {
 	
-	private String username;
-	private int id;
+	private User user;
+	private Compra_model compra;
 
 	private static ArrayList<String> errors = new ArrayList<String> ();
 
-	public Session(String username, String password) throws Creation_Exception{
-		this.username = username;
-		this.checkIfValid(password);
-		this.checkCredentials(password);
+	public Session(User user, Compra_model compra) throws Creation_Exception{
+		this.user = user;
+		this.checkIfValid();
+		this.checkCredentials(user.getPassword());
 		this.authenticate();
+		this.compra = compra;
 	}
 
-	public String getUsername() {
-		return username;
+	public User getUser() {
+		return user;
 	}
 	
-	public int getId() {
-		return id;
+	public Compra_model getCompra() {
+		return compra;
 	}
-	
 
-	private void checkIfValid(String password) throws Creation_Exception {
+	private void checkIfValid() throws Creation_Exception {
 		String checkIfValidError = "Usuario e senhas devem ter no minimo 3 digitos.";
-		if(this.username.length() < 3 || password.length() < 3){
+		if(this.user.getUsername().length() < 3 || this.user.getPassword().length() < 3){
 			errors.add(checkIfValidError);
 			throw new Creation_Exception(errors);
 		}
@@ -46,6 +48,5 @@ public class Session {
 	
 	private void authenticate() {
 		int id = 123; //vai ser pego no banco
-		this.id = id;
 	}
 }
