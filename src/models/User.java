@@ -14,7 +14,7 @@ public class User {
 		
 		// END Atributos //
 		
-		private static ArrayList<String> errors = new ArrayList<String> ();
+		private static ArrayList<String> errors;
 		
 		public User(String username, String password, int access) throws Creation_Exception {
 			this.username = username;
@@ -67,7 +67,7 @@ public class User {
 		private void checkParams() throws Creation_Exception {
 			String usernameErro = "Seu username deve conter no minimo 3 digitos.";
 			String passwordErro = "Seu password deve conter no minimo 4 digitos.";
-			
+			errors = new ArrayList<String> ();
 			if(username.length() < 3){
 				errors.add(usernameErro);
 			}
