@@ -1,71 +1,93 @@
 package models;
 
+import java.time.LocalDate;
+
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.StringProperty;
+
 public class Item {
 
-	private String fabricante;
-	private String validade;
-	private String descricao;
-	private String data_entrada;
-	private String grupo;
-	private int codigo;
-	private double preco_unitario;
+	private StringProperty fabricante;
+	private StringProperty validade;
+	private StringProperty descricao;
+	private ObjectProperty<LocalDate> data_entrada;
+	private StringProperty grupo;
+	private IntegerProperty codigo;
+	private DoubleProperty preco_unitario;
 	
 	public Item(String fabricante, String validade, int codigo, 
-			String descricao, String data_entrada, String grupo, double preco_unitario){
+			String descricao, int dia, int mes, int ano, String grupo, double preco_unitario){
 		
-		this.codigo = codigo;
-		this.data_entrada = data_entrada;
-		this.descricao = descricao;
-		this.fabricante = fabricante;
-		this.validade = validade;
-		this.grupo = grupo;
-		this.preco_unitario = preco_unitario;
+		this.codigo.set(codigo);
+		this.data_entrada = new SimpleObjectProperty<LocalDate>(LocalDate.of(dia, mes, ano));
+		this.descricao.set(descricao);
+		this.fabricante.set(fabricante);
+		this.validade.set(validade);
+		this.grupo.set(grupo);
+		this.preco_unitario.set(preco_unitario);
 		
 	}
-	
-	public double getPreco_unitario() {
-		return preco_unitario;
-	}
-	public void setPreco_unitario(double preco_unitario) {
-		this.preco_unitario = preco_unitario;
-	}
-	public String getFabricante() {
+
+	public StringProperty getFabricante() {
 		return fabricante;
 	}
+
 	public void setFabricante(String fabricante) {
-		this.fabricante = fabricante;
+		this.fabricante.set(fabricante);
 	}
-	public String getValidade() {
+
+	public StringProperty getValidade() {
 		return validade;
 	}
+
 	public void setValidade(String validade) {
-		this.validade = validade;
+		this.validade.set(validade);
 	}
-	public String getDescricao() {
+
+	public StringProperty getDescricao() {
 		return descricao;
 	}
+
 	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+		this.descricao.set(descricao);
 	}
-	public String getData_entrada() {
+
+	public ObjectProperty<LocalDate> getData_entrada() {
 		return data_entrada;
 	}
-	public void setData_entrada(String data_entrada) {
+
+	public void setData_entrada(ObjectProperty<LocalDate> data_entrada) {
 		this.data_entrada = data_entrada;
 	}
-	public String getGrupo() {
+
+	public StringProperty getGrupo() {
 		return grupo;
 	}
-	public void setGrupo(String grupo) {
+
+	public void setGrupo(StringProperty grupo) {
 		this.grupo = grupo;
 	}
-	public int getCodigo() {
+
+	public IntegerProperty getCodigo() {
 		return codigo;
 	}
-	public void setCodigo(int codigo) {
+
+	public void setCodigo(IntegerProperty codigo) {
 		this.codigo = codigo;
 	}
+
+	public DoubleProperty getPreco_unitario() {
+		return preco_unitario;
+	}
+
+	public void setPreco_unitario(DoubleProperty preco_unitario) {
+		this.preco_unitario = preco_unitario;
+	}
 	
+		
 	
 	
 }
