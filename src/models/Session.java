@@ -31,7 +31,7 @@ public class Session {
 
 	private void checkIfValid() throws Creation_Exception {
 		String checkIfValidError = "Usuario e senhas devem ter no minimo 3 digitos.";
-		if(this.user.getUsername().length() < 3 || this.user.getPassword().length() < 3){
+		if(this.user.getUsername().length() < 3 || this.user.getPassword().length() < 4){
 			errors.add(checkIfValidError);
 			throw new Creation_Exception(errors);
 		}
