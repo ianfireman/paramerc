@@ -34,6 +34,8 @@ public class MainController implements Initializable {
 	@FXML
 	private Label loginAlert;
 	
+	
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 	}

@@ -4,10 +4,11 @@ public class Pagamento_model {
 	
 	private int tipo_pagamento;
 	private String data_pagamento;
-	private String nome_user;
+	private String currentUser;
 	private Compra_model compra;
 	private double pago_total;
 	private double troco_total;
+	
 	
 	public int getTipo_pagamento() {
 		return tipo_pagamento;
@@ -21,11 +22,11 @@ public class Pagamento_model {
 	public void setData_pagamento(String data_pagamento) {
 		this.data_pagamento = data_pagamento;
 	}
-	public String getNome_user() {
-		return nome_user;
+	public String getCurrentUser() {
+		return currentUser;
 	}
-	public void setNome_user(String nome_user) {
-		this.nome_user = nome_user;
+	public void setCurrentUser(String currentUser) {
+		this.currentUser = currentUser;
 	}
 	public Compra_model getCompra() {
 		return compra;
