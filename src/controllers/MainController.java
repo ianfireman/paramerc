@@ -34,24 +34,17 @@ public class MainController implements Initializable {
 	@FXML
 	private Label loginAlert;
 	
-	
-	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 	}
 	
-	public void loginUser(ActionEvent e){
-		try {
-			User user = new User(loginField.getText(), passwordField.getText(), 1);
-			Compra compra = new Compra();
-			currentUser = new Session(user, compra);
-			startMenu(e);
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		} catch (Creation_Exception e2) {
-			loginAlert.setText(e2.getErrors().toString());
-		}
+	public void loginUser(ActionEvent e) {
+		User user = new User(loginField.getText(), passwordField.getText(), 1);
+		Compra compra = new Compra();
+		currentUser = new Session(user, compra);
+		startMenu(e);
 	}
+	
 
 	private void startMenu(ActionEvent e) throws IOException {
 		FXMLLoader loader = new FXMLLoader();
@@ -67,5 +60,9 @@ public class MainController implements Initializable {
 	
 	public void closeApplication(ActionEvent e){
 		Platform.exit();
+	}
+	
+	public Label getLoginAlert(){
+		return this.loginAlert;
 	}
 }
