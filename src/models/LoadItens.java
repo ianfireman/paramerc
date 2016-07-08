@@ -9,7 +9,7 @@ public class LoadItens {
 	public void loadItemList(){
 		itens = new ArrayList<Item>();
 		
-		itens.add( new Item("MercadosDistri S.A","28/09/2016",1,"Fósforo","23/05/2016","Utilidade",1.00,"Foguinho"));
+		itens.add( new Item("MercadosDistri S.A","28/02/2016",1,"Fósforo","23/05/2016","Utilidade",1.00,"Foguinho"));
 		itens.add( new Item("MercadosDistri S.A","29/09/2016",2,"Fósforo","23/05/2016","Utilidade",1.00,"Foguinho"));
 		itens.add( new Item("MercadosDistri S.A","30/09/2016",3,"Fósforo","23/05/2016","Utilidade",1.00,"Foguinho"));
 		itens.add( new Item("MercadosDistri S.A","01/10/2016",4,"Fósforo","23/05/2016","Utilidade",1.00,"Foguinho"));

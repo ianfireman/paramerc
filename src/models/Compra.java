@@ -1,8 +1,14 @@
 package models;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import exceptions.Item_Exception;
+import exceptions.Validade_Exception;
 
 public class Compra {
 	
@@ -16,11 +22,19 @@ public class Compra {
 		itens = new ArrayList<Item>();
 	}
 	
-	public void addItem(Item novoItem) throws Item_Exception{
-		if(novoItem != null){
-			itens.add(novoItem);
-		} else {
+	public void addItem(Item novoItem) throws Item_Exception, Validade_Exception, ParseException{		
+		if (novoItem == null){
 			throw new Item_Exception();
+		}
+		
+		DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+		Date today = new Date();
+		Date itemDate = (Date)formatter.parse(novoItem.getValidade());
+		
+		if(today.after(itemDate)){
+			throw new Validade_Exception();
+		} else {
+			itens.add(novoItem);
 		}
 	}
 	public int getTotalItens(){
