@@ -2,6 +2,8 @@ package models;
 
 import java.util.ArrayList;
 
+import exceptions.Item_Exception;
+
 public class Compra {
 	
 	private ArrayList<Item> itens;
@@ -14,8 +16,12 @@ public class Compra {
 		itens = new ArrayList<Item>();
 	}
 	
-	public void addItem(Item novoItem){
-		itens.add(novoItem);
+	public void addItem(Item novoItem) throws Item_Exception{
+		if(novoItem != null){
+			itens.add(novoItem);
+		} else {
+			throw new Item_Exception();
+		}
 	}
 	public int getTotalItens(){
 		return itens.size();
