@@ -21,55 +21,41 @@ public class Main extends Application {
 	private Stage primaryStage;
 	@Override
 	public void start(Stage primaryStage) {
-		try {
 
-			this.primaryStage  = primaryStage;
+		this.primaryStage  = primaryStage;
 
-			Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
-			primaryStage.setX(primScreenBounds.getWidth()*0.003); 
-			primaryStage.setY(primScreenBounds.getHeight()*0.005);
-			primaryStage.setWidth(primScreenBounds.getWidth()*0.2);
-			primaryStage.setHeight(primScreenBounds.getHeight()*0.99);
+		Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+		primaryStage.setX(primScreenBounds.getWidth()*0.003); 
+		primaryStage.setY(primScreenBounds.getHeight()*0.005);
+		primaryStage.setWidth(primScreenBounds.getWidth()*0.2);
+		primaryStage.setHeight(primScreenBounds.getHeight()*0.99);
 			
-	        //set Stage boundaries to visible bounds of the main screen
-			initRootLayout();
-			showLoginMenu();
-			
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
+	    //set Stage boundaries to visible bounds of the main screen
+		initRootLayout();
+		showLoginMenu();	
 	}
 	
 	public static void showLoginMenu(){
-		try{
-			FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(Main.class.getResource("../view/Vw_Login.fxml"));
-	        AnchorPane login = (AnchorPane) loader.load();
-	        //rootLayout.setCenter(login);
-	        rootLayout.getChildren().add(login);
-	        AnchorPane.setTopAnchor(login, 0.0);
-	        AnchorPane.setBottomAnchor(login, 0.0);
-	        AnchorPane.setRightAnchor(login, 0.0);
-	        AnchorPane.setLeftAnchor(login, 0.0);
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-		
+		FXMLLoader loader = new FXMLLoader();
+	    loader.setLocation(Main.class.getResource("../view/Vw_Login.fxml"));
+	    AnchorPane login = (AnchorPane) loader.load();
+	    //rootLayout.setCenter(login);
+	    rootLayout.getChildren().add(login);
+	    AnchorPane.setTopAnchor(login, 0.0);
+	    AnchorPane.setBottomAnchor(login, 0.0);
+	    AnchorPane.setRightAnchor(login, 0.0);
+	    AnchorPane.setLeftAnchor(login, 0.0);
 	}
 	
 	public void initRootLayout(){
-		try{
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("../view/RootLayout.fxml"));
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource("../view/RootLayout.fxml"));
 			
-			rootLayout = (AnchorPane) loader.load();
-			primaryStage.setResizable(false);
-			Scene scene = new Scene(rootLayout);
-			primaryStage.setScene(scene);
-            primaryStage.show();
-		} catch (IOException e) {
-            e.printStackTrace();
-        }
+		rootLayout = (AnchorPane) loader.load();
+		primaryStage.setResizable(false);
+		Scene scene = new Scene(rootLayout);
+		primaryStage.setScene(scene);
+        primaryStage.show();
 	}
 	
 	public static void main(String[] args) {

@@ -8,6 +8,7 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.StringProperty;
 
+
 public class Item {
 
 	private StringProperty fabricante;
