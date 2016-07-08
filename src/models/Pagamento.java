@@ -5,7 +5,6 @@ public class Pagamento {
 	private int tipo_pagamento;
 	private String data_pagamento;
 	private String currentUser;
-	private Compra compra;
 	private double pago_total;
 	private double troco_total;
 	
@@ -28,12 +27,6 @@ public class Pagamento {
 	public void setCurrentUser(String currentUser) {
 		this.currentUser = currentUser;
 	}
-	public Compra getCompra() {
-		return compra;
-	}
-	public void setCompra(Compra compra) {
-		this.compra = compra;
-	}
 	public double getPago_total() {
 		return pago_total;
 	}
@@ -43,8 +36,12 @@ public class Pagamento {
 	public double getTroco_total() {
 		return troco_total;
 	}
-	public void setTroco_total(double troco_total) {
-		this.troco_total = troco_total;
+	public void setTroco_total(double pago, double preco) {
+		
+		if(pago > preco){
+			this.troco_total = pago - preco;
+		}
+		
 	}
 
 }

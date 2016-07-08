@@ -38,7 +38,7 @@ public class MenuController implements Initializable {
 		stage = new Stage();
 		configStage();
 		usernameMenu.setText(MainController.currentUser.getUser().getUsername());
-		startCaixa();
+			startCaixa();
 	}	
 	
 	public void startCaixa() throws IOException {

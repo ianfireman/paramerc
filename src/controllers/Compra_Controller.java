@@ -1,6 +1,7 @@
 package controllers;
 
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
@@ -13,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextField;
 import models.Compra;
 import models.Item;
@@ -24,6 +26,7 @@ public class Compra_Controller implements Initializable{
 	private Compra compra;
 	private Item item;
 	private LoadItens li = new LoadItens();
+	private DecimalFormat df;
 	
 	@FXML
 	private Label lb_qtdItens;
@@ -43,34 +46,24 @@ public class Compra_Controller implements Initializable{
 	private Label lb_precoItem;
 	@FXML
 	private DatePicker dp_dataHoje;
+	@FXML
+	private Button btn_confirmar;
+	@FXML
+	private SplitPane sp_telaCompra;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		this.dp_dataHoje.setValue(LocalDate.now());
 		li.loadItemList();
+		df = new DecimalFormat("#.00");
 	}
-	
-//	private Item mockItem(){
-//		
-//		Item item = new Item("Nestle", dp_dataHoje.getValue().toString(),12,"Nescal", 
-//				"23/01/2016" ,"Alimentos",10.00);
-//		return item;
-//	}
-//	
-//	private void mockCompra(){
-//		compra = new Compra();
-//		compra.setData_compra("06/07/2016");
-//		compra.setNome_user("Abhner");
-//	}
 	
 	public void AdicionarItem(ActionEvent e){
 		//Item item = ConectaBanco.procuraItem(tf_codigoBarras);
-//		Item item = mockItem();
-//		mockCompra();
 		item = li.getItemByCodigo(Integer.parseInt(tf_codigoBarras.getText()));
 		MainController.currentUser.getCompra().addItem(item);
 		MainController.currentUser.getCompra().setPreco_compra(item.getPreco_unitario());
-		this.lb_valorTotal.setText("" + MainController.currentUser.getCompra().getPreco_compra());
+		this.lb_valorTotal.setText("R$ " + df.format(MainController.currentUser.getCompra().getPreco_compra()));
 		this.lb_codigoItem.setText("" + item.getCodigo());
 		this.lb_descricaoItem.setText(item.getDescricao() + " " + item.getModelo());
 		this.lb_precoItem.setText("" + item.getPreco_unitario());
@@ -81,6 +74,9 @@ public class Compra_Controller implements Initializable{
 
 	public void limparCodigoBarras(ActionEvent e){
 		this.tf_codigoBarras.clear();
+	}
+	public void disableTela(ActionEvent e){
+		this.sp_telaCompra.setDisable(true);
 	}
 
 }
