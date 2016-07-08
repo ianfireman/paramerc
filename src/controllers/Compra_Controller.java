@@ -5,9 +5,6 @@ import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -26,7 +23,6 @@ import models.LoadItens;
 
 public class Compra_Controller implements Initializable{
 
-	private Compra compra;
 	private Item item;
 	private LoadItens li = new LoadItens();
 	private DecimalFormat df;

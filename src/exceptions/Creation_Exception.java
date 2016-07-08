@@ -12,8 +12,6 @@ public class Creation_Exception extends Exception {
                                                                                                                                  
 	public ArrayList<String> getErrors() {                                                                                       
 		return errors;                                                                                                           
-	}                                                                                                                            
-	                                                                                                                             
-                                                                                                                                 
+	}                                                                                                    
 }                                                                                                                                
                                                                                                                                  
