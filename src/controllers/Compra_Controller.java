@@ -11,11 +11,14 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import models.Compra;
 import models.Item;
 import models.LoadItens;
@@ -27,6 +30,10 @@ public class Compra_Controller implements Initializable{
 	private Item item;
 	private LoadItens li = new LoadItens();
 	private DecimalFormat df;
+	
+	private Stage stage;
+	private Parent parent;
+	private Scene scene;
 	
 	@FXML
 	private Label lb_qtdItens;

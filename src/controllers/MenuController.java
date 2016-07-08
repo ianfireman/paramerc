@@ -20,9 +20,9 @@ import javafx.stage.Stage;
 
 public class MenuController implements Initializable {
 	
-	public Parent parent;
-	public Stage stage;
-	public Scene scene;
+	private Parent parent;
+	private Stage stage;
+	private Scene scene;
 	
 	@FXML
 	private Label usernameMenu;
@@ -95,4 +95,30 @@ public class MenuController implements Initializable {
 		stage.hide();
 		Main.showLoginMenu();
 	}
+
+	public Parent getParent() {
+		return parent;
+	}
+
+	public void setParent(Parent parent) {
+		this.parent = parent;
+	}
+
+	public Stage getStage() {
+		return stage;
+	}
+
+	public void setStage(Stage stage) {
+		this.stage = stage;
+	}
+
+	public Scene getScene() {
+		return scene;
+	}
+
+	public void setScene(Scene scene) {
+		this.scene = scene;
+	}
+	
+	
 }
