@@ -16,10 +16,14 @@ public class Compra {
 	private double preco_compra = 0;
 	private String data_compra;
 	private String nome_user;
+	private Pagamento pagamento;
 	
-	
+	public Pagamento getPagamento(){
+		return pagamento;
+	}
 	public Compra(){
 		itens = new ArrayList<Item>();
+		this.pagamento = new Pagamento();
 	}
 	
 	public void addItem(Item novoItem) throws Item_Exception, Validade_Exception, ParseException{		
